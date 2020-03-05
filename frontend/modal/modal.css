@@ -1,0 +1,32 @@
+html, body {
+	background: #000;
+	color: #fff;
+	font-family: "Arial", sans-serif;
+}
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+}
+
+table {
+	border: 0;
+}
+
+th {
+	font-weight: bold;
+	background: #222;
+	padding: 5px 10px;
+}
+
+td {
+	padding: 10px 20px;
+	border: 1px solid #222;
+}
+
+.button {
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background: #ff0000;
+}
