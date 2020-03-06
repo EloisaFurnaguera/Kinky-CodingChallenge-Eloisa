@@ -12,6 +12,8 @@ const logger = winston.createLogger({
 
 const app = express();
 
+app.use(express.urlencoded());
+
 // Static assets.
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,10 +32,24 @@ nunjucks.configure(app.get('views'), {
 	express: app,
 });
 
+const comments = [
+	"My comments, and more comments",
+	"I bet they also have many comments",
+	"Comments are great"
+];
+
 app.get('/', (request, response) => {
-	const options = { pageTitle: 'Homepage' };
+	const options = { pageTitle: 'Homepage', comments: comments };
 	return response.render('home', options);
 });
+
+// Submit form endpoint
+app.post('/', (request, response) => {
+	const username = request.body.username;
+	const comment = request.body.comment;
+	comments.push(comment);
+	return response.render('home', { submittedComment: true, comments: comments });
+})
 
 app.listen(PORT, () => {
 	logger.log({ level: 'info', message: `listening on ${PORT}` });

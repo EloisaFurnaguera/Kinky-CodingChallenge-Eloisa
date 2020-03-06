@@ -1,8 +1,12 @@
-$primary-bg: #000;
+$primary-bg:black;
 $primary-text-color: #FF3B3B;
+$secondary-color: white;
+$font-stack: Arial, Helvetica, sans-serif;
 
 body {
-	background-color: $primary-bg
+	background-color: $primary-bg;
+	font-family: $font-stack;
+	padding: 10px;
 }
 
 h1,
@@ -10,6 +14,73 @@ h2,
 h3,
 h4,
 h5,
-p {
+li,
+a,
+p, 
+
+input {
 	color: $primary-text-color;
+	font-size: 30px;
 }
+// If I had more time I would like to move the meune to the left side 
+nav {
+	display: grid;	
+	grid-template-columns: auto auto auto auto;
+
+	img {
+		width: 4em;
+		padding: 10%;
+	}
+	a {
+		font-size: 20px;
+	}
+	a:hover {
+		color: $secondary-color;
+	  }
+  }
+
+.upper{
+	display: grid;
+	grid-template-columns: auto;
+	@media screen and (min-width: 768px) {
+		grid-template-columns: auto auto;
+	}
+	img {
+		width: 100%; 
+	}
+	.text{
+		margin: 20px;
+	}
+}
+
+.success-message {
+	color: green;
+}
+
+.lower {
+	display: grid;
+	column-gap: 3em;
+	grid-template-columns: auto;
+	@media screen and (min-width: 768px) {
+		grid-template-columns: auto auto;
+	}
+	.comment-form {
+		display: grid;
+		grid-template-columns: auto;		
+	}
+	.comment-area {
+		height: 150px;
+		border-radius: 10px;
+		font-size: 30px;		
+	}
+	.user-name{
+		height: 30px;
+		border-radius: 10px;
+	}
+	.submit{
+		background-color: $primary-bg;
+		border: none;
+	}
+}
+
+

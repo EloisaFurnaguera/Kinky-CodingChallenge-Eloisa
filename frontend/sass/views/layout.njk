@@ -2,10 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ pageTitle }}</title>
 	<link rel="stylesheet" href="/css/main.css"/>
 </head>
 <body>
+        <nav>                
+            <div><img src="assets/logo.png"></div>
+            <div><a href="#">Home</a></div>
+            <div><a href="#">About</a></div>
+            <div class="4"><a href="#">Services</a></div>
+
+        </nav> 
+
 	{% block content %}{% endblock %}
 <footer>
 	{% block footer %}{% endblock %}
